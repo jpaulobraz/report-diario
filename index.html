@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Relatório Diário</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Start your project here-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color justify-content-between">
+        <a class="navbar-brand" href="#">Relatório Diário</a>
+        <form class="form-inline my-1">
+            <a href="" class="btn btn-outline-white btn-sm my-0" data-toggle="modal" data-target="#modalLoginForm">Projetos</a>
+        </form>
+    </nav>
+    <!-- /Start your project here-->
+    <div class="container-fluid">
+        <div class="row my-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="card" style="height:55;">
+                    <div class="card-body">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="email">Status Project: </label>
+                                <canvas class="pl-3" id="myCanvas" width="50" height="50"></canvas>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div id="chartsDefectRate">
+                        <div class="wrapperDefectRate">
+                            <canvas id="defectRate" height="200" width="400" style="display: block;width: 400px;height: 200px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div id="chartsStatus">
+                        <div class="wrapperStatus">
+                            <canvas id="status"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6">
+                <div class="card">
+                    <div id="chartsDefectRate">
+                        <div class="wrapperDefectRate">
+                            <canvas id="openCloseBugs"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div id="chartsProgressExecucao">
+                        <div class="wrapperProgressExecucao">
+                            <canvas id="progressExecucao"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <h4>
+                            <label for="comment">Pontos de Atenção:</label>
+                        </h4>
+                        <textarea name="comment" class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                <div class="media my-3">
+                    <div class="media-left">
+                        <span class="fa fa-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <small>
+                                <i>Postado em Maio 04, 2018</i>
+                            </small>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="media my-3">
+                    <div class="media-left">
+                        <span class="fa fa-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <small>
+                                <i>Postado em Maio 05, 2018</i>
+                            </small>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="media my-3">
+                    <div class="media-left">
+                        <span class="fa fa-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <small>
+                                <i>Postado em Maio 06, 2018</i>
+                            </small>
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document" id=modal>
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Projeto</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <select class="custom-select" id="projectId">
+                                </select>
+                            </div>
+
+                            <div class="md-form mb-4">
+                                <select class="custom-select" id="cycleId">
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-default">Pesquisar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script src="js/Chart.js"></script>
+        <script src="js/chartjs-plugin-datalabels.js"></script>
+        <script src="js/chartRumo.js"></script>
+        <script src="js/jquery.loading.block.js"></script>
+
+</body>
+
+</html>
